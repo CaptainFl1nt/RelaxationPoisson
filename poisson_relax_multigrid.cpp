@@ -13,8 +13,8 @@ void createBoundaries(bool** bounds, int size, double x0, double x1, double y0, 
     for (int i = 0; i < size; i++) {
         bounds[0][i] = true;
         bounds[size-1][i] = true;
-        //bounds[i][0] = true;
-        //bounds[i][size-1] = true;
+        bounds[i][0] = true;
+        bounds[i][size-1] = true;
     }
     /*
     double x,yp,yn;
@@ -43,12 +43,12 @@ void imposeBCs(double** phi, int size, double x0, double x1, double y0, double y
         phi[0][i] = 1;
         phi[size-1][i] = -1;
     }
-    /*
+    
     for (int i = 0; i < size; i++) {
         x = x0 + i*h;
         phi[i][0] = 0;
         phi[i][size-1] = 0;
-    }*/
+    }
     /*
     double yp,yn;
     int j1, j2;
